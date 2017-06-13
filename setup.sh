@@ -1,5 +1,9 @@
 #!/bin/bash
 
+#tmux
+git -C $HOME clone https://github.com/jimeh/tmux-themepack.git
+ln -sf `pwd`/tmux/tmux.conf ~/.tmux.conf
+
 # Plug (to be used with nvim)
 # https://github.com/junegunn/vim-plug
 curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs \

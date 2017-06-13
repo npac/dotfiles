@@ -86,11 +86,13 @@ Plug 'sheerun/vim-polyglot'
   let g:polyglot_disabled = ['elm']
 
 " HTML / JS / CSS
-Plug 'othree/html5.vim'
 "Plug 'html-improved-indentation'
 Plug 'pangloss/vim-javascript'
 Plug 'flowtype/vim-flow'
 Plug 'wokalski/autocomplete-flow'
+Plug 'mxw/vim-jsx'
+Plug 'othree/yajs.vim'
+Plug 'othree/html5.vim'
 " For func argument completion
 Plug 'Shougo/neosnippet'
 Plug 'Shougo/neosnippet-snippets'
@@ -167,10 +169,15 @@ Plug 'editorconfig/editorconfig-vim'
 
 " Jump between quicklist, location (syntastic, etc) items with ease, among other things
 Plug 'tpope/vim-unimpaired'
-
+" Sidebar tree
+Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 " Line commenting
 Plug 'tomtom/tcomment_vim'
   " By default, `gc` will toggle comments
+
+Plug 'jlanzarotta/bufexplorer'
+"bufexplorer
+nnoremap <silent> <F12> :BufExplorer<CR>
 
 Plug 'janko-m/vim-test'                " Run tests with varying granularity
   nmap <silent> <leader>t :TestNearest<CR>
@@ -364,6 +371,11 @@ nnoremap <silent> <cr> :nohlsearch<cr>
 "map <Up>    :echo "no!"<cr>
 "map <Down>  :echo "no!"<cr>
 
+" center view on the search result
+noremap n nzz
+noremap N Nzz
+" Fast saving
+nmap <leader>w :w!<cr>
 " Custom split opening / closing behaviour
 map <C-N> :vsp<CR><C-P>
 map <C-C> :q<CR>
