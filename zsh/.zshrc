@@ -21,6 +21,10 @@ if [ -d "$HOME/.local/bin" ] ; then
     PATH="$HOME/.local/bin:$PATH"
 fi
 
+if [ -d "/snap/bin" ] ; then
+    PATH="$PATH:/snap/bin"
+fi
+
 export PATH
 
 
@@ -116,3 +120,5 @@ alias c='clear'
 eval "$(fzf --zsh)"
 eval "$(zoxide init --cmd cd zsh)"
 export GOPATH=$HOME/go
+# This is a global variable to avoid Certificate validation issues cause by the Zscaler runnuing on windows
+export NODE_TLS_REJECT_UNAUTHORIZED=0
