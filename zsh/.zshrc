@@ -89,7 +89,10 @@ zinit light Aloxaf/fzf-tab
 #zinit snippet OMZP::sudo
 #zinit snippet OMZP::archlinux
 #zinit snippet OMZP::aws
-zinit snippet OMZP::nvm
+#zinit snippet OMZP::nvm
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
+[ -s "$NVM_DIR/zsh_completion" ] && \. "$NVM_DIR/zsh_completion" # This loads nvm bash_completion
 #zinit snippet OMZP::pyenv
 #zinit snippet OMZP::kubectl
 #zinit snippet OMZP::kubectx
