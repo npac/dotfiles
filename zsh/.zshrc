@@ -1,9 +1,10 @@
+# zmodload zsh/zprof
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
-#if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-#  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-#fi
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
 
 # Set up the prompt
 
@@ -89,17 +90,17 @@ zinit light Aloxaf/fzf-tab
 #zinit snippet OMZP::sudo
 #zinit snippet OMZP::archlinux
 #zinit snippet OMZP::aws
-#zinit snippet OMZP::nvm
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
-[ -s "$NVM_DIR/zsh_completion" ] && \. "$NVM_DIR/zsh_completion" # This loads nvm bash_completion
+zinit snippet OMZP::nvm
+#export NVM_DIR="$HOME/.nvm"
+#[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
+#[ -s "$NVM_DIR/zsh_completion" ] && \. "$NVM_DIR/zsh_completion" # This loads nvm bash_completion
 #zinit snippet OMZP::pyenv
 #zinit snippet OMZP::kubectl
 #zinit snippet OMZP::kubectx
 #zinit snippet OMZP::command-not-found
 
 # Load completions
-autoload -Uz compinit && compinit
+# autoload -Uz compinit && compinit
 
 zinit cdreplay -qi
 
@@ -124,4 +125,8 @@ eval "$(fzf --zsh)"
 eval "$(zoxide init --cmd cd zsh)"
 export GOPATH=$HOME/go
 # This is a global variable to avoid Certificate validation issues cause by the Zscaler runnuing on windows
-export NODE_TLS_REJECT_UNAUTHORIZED=0
+# export NODE_TLS_REJECT_UNAUTHORIZED=0
+# zprof
+
+# opencode
+export PATH=/home/pavel/.opencode/bin:$PATH
