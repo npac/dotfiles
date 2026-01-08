@@ -5,7 +5,10 @@
 # NixOS-WSL specific options are documented on the NixOS-WSL repository:
 # https://github.com/nix-community/NixOS-WSL
 
-{ config, lib, pkgs, ... }:
+{
+  pkgs,
+  ...
+}:
 
 {
 
@@ -36,25 +39,22 @@
     python314
     nodePackages.prettier
     unzip
-];
+    nil
+    statix
+  ];
 
-
-  # security.pki.certificateFiles = [
-  #   ./zscaler.crt
-  # ];
-  #
   programs.neovim = {
     defaultEditor = true;
     viAlias = true;
     vimAlias = true;
   };
 
-  programs.zsh.enable=true;
+  programs.zsh.enable = true;
 
   environment.shells = [ pkgs.zsh ];
   users.defaultUserShell = pkgs.zsh;
 
-  users.users.nixos = {   
+  users.users.nixos = {
     shell = pkgs.zsh;
   };
 }
