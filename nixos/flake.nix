@@ -15,6 +15,10 @@
             system = "x86_64-linux";
             modules = [ 
               nixos-wsl.nixosModules.default
+              {
+                system.stateVersion = "25.05";
+                wsl.enable = true;
+              }
               ./configuration.nix 
             ];
         };
