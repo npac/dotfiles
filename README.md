@@ -5,7 +5,7 @@
 Install prerequisites first
 
 ```sh
-suto apt install stow nvim zsh 
+suto apt install stow nvim zsh
 ```
 
 Use `stow` to install required packages
@@ -14,7 +14,7 @@ For example
 
 ```sh
 git clone git@github.com:npca/dotfiles
-cd dotfiles 
+cd dotfiles
 
-stow -t ~ nmiv zsh tmux
+stow -t ~ nvim zsh tmux
 ```
