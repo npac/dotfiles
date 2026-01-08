@@ -1,7 +1,4 @@
-{
-  _,
-}:
-{
+_: {
 
   security.pki.certificates = [
     ''
