@@ -41,6 +41,7 @@
     unzip
     nil
     statix
+    vtsls
   ];
 
   programs.neovim = {
@@ -57,4 +58,9 @@
   users.users.nixos = {
     shell = pkgs.zsh;
   };
+
+  nix.settings.experimental-features = [
+    "nix-command"
+    "flakes"
+  ];
 }
