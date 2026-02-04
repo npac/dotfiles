@@ -14,8 +14,18 @@ return {
         json = { "prettier" },
         yaml = { "prettier" },
         graphql = { "prettier" },
+        xml = { "xmllint" }, -- Handles .xml and .xsd (filetype=xml)
+        xsd = { "xmllint" }, -- Handles .xml and .xsd (filetype=xml)
         lua = { "stylua" },
         python = { "isort", "black" },
+      },
+      formatters = {
+        xmllint = {
+          command = "xmllint",
+          env = { XMLLINT_INDENT = "    " }, -- 4 spaces
+          args = { "--format", "-" },
+          stdin = true,
+        },
       },
     },
   },

@@ -18,30 +18,31 @@
     tree-sitter
     tree
     zsh
+    starship
     tmux
     stow
     git
     fzf
     zoxide
     fd
+    libxml2 # provide xmllint tool
     lazygit
     luajitPackages.luarocks-nix
     lua-language-server
     stylua
     ripgrep
-    gopls
     yaml-language-server
-    typescript-language-server
-    docker-language-server
-    bash-language-server
-    go
+    #docker-language-server
+    #bash-language-server
     nodejs_24
-    python314
+    #python314
     nodePackages.prettier
     unzip
     nil
     statix
-    vtsls
+    codex
+    wsl-open
+    #    vtsls
   ];
 
   programs.neovim = {
@@ -53,6 +54,14 @@
   programs.zsh.enable = true;
 
   environment.shells = [ pkgs.zsh ];
+
+  environment.shellAliases = {
+    gs = "git status";
+    ll = "ls -l";
+    l = "ls -alh";
+    xdg-open = "wsl-open";
+  };
+
   users.defaultUserShell = pkgs.zsh;
 
   users.users.nixos = {
